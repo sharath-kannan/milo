@@ -536,7 +536,7 @@ export function decorateAutoBlock(a) {
       }
 
       // slack uploaded mp4s
-      if (key === 'video' && !a.textContent.match('media_.*.mp4')) {
+      if (key === 'video' && !a.textContent.match('media_.*.mp4') && !a.textContent.match('images-tv.adobe.com.*.mp4')) {
         return false;
       }
 
@@ -614,7 +614,7 @@ function decorateHeader() {
   const headerQuery = new URLSearchParams(window.location.search).get('headerqa');
   header.className = headerQuery || headerMeta || 'gnav';
   const metadataConfig = getMetadata('breadcrumbs')?.toLowerCase()
-  || getConfig().breadcrumbs;
+    || getConfig().breadcrumbs;
   if (metadataConfig === 'off') return;
   const baseBreadcrumbs = getMetadata('breadcrumbs-base')?.length;
   const breadcrumbs = document.querySelector('.breadcrumbs');
@@ -716,7 +716,7 @@ async function loadMartech({ persEnabled = false, persManifests = [] } = {}) {
   }
 
   window.targetGlobalSettings = { bodyHidingEnabled: false };
-  loadIms().catch(() => {});
+  loadIms().catch(() => { });
 
   const { default: initMartech } = await import('../martech/martech.js');
   await initMartech({ persEnabled, persManifests });
@@ -765,7 +765,7 @@ async function checkForPageMods() {
   if (targetEnabled) {
     await loadMartech({ persEnabled: true, persManifests, targetMd });
   } else if (persManifests.length) {
-    loadIms().catch(() => {});
+    loadIms().catch(() => { });
     const { preloadManifests } = await import('../features/personalization/manifest-utils.js');
     const manifests = preloadManifests({ persManifests }, { getConfig, loadLink });
 
