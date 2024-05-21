@@ -350,6 +350,11 @@
   padding: 10px 24px 8px;
 }
 
+.table .l-button .con-button,
+.con-button.button-l {
+  max-width: 80%;
+}
+
 .con-button.button-justified {
   display: block;
   text-align: center;
