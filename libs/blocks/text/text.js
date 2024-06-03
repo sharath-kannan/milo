@@ -79,8 +79,8 @@ function decorateLinkFarms(el) {
 export default function init(el) {
   el.classList.add('text-block', 'con-block');
   // el.querySelector('h3').innerText = `${window.navigator.userAgent}\n window.crome=${window.chrome} \n window.runtime=${window.chrome.runtime}\n window.webstore=${window.chrome.webstore}`;
-  el.querySelector('h3').innerText = `${window.navigator.userAgent}`;
-  el.querySelector('h3').innerText = `${window.navigator.userAgent}\n chrome :${window.chrome}`;
+  // el.querySelector('h3').innerText = `${window.navigator.userAgent}`;
+  el.querySelector('h3').innerText = `${window.navigator.userAgent}\n chrome :${window.chrome}\n webDriver:${window.navigator.webdriver}`;
   let rows = el.querySelectorAll(':scope > div');
   if (rows.length > 1) {
     if (rows[0].textContent !== '') el.classList.add('has-bg');
