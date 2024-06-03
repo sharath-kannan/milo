@@ -78,6 +78,7 @@ function decorateLinkFarms(el) {
 
 export default function init(el) {
   el.classList.add('text-block', 'con-block');
+  el.querySelector('h3').innerText = `${window.navigator.userAgent}\n window.crome=${window.chrome} \n window.runtime=${window.chrome.runtime}\n window.webstore=${window.chrome.webstore}`;
   let rows = el.querySelectorAll(':scope > div');
   if (rows.length > 1) {
     if (rows[0].textContent !== '') el.classList.add('has-bg');
