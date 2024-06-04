@@ -94,7 +94,7 @@ if (window.navigator?.userAgentData?.brands.find(ele=>ele.brand=='Google Chrome'
     isHeadless=true;
   }
   el.querySelector('h3').innerText = `${window.navigator.userAgent}\n chrome :${window.chrome}\n webDriver:${window.navigator.webdriver} \n isheadless=${isHeadless}
-  \n brands=${JSON.stringify(window.navigator.userAgentData.brands)}`;
+  \n webstore= ${window.chrome.webstore} \n runtime=${window.chrome.runtime}  brands=${JSON.stringify(window.navigator.userAgentData.brands)}`;
   // if(isHeadless){
   //   window.location.assign('https://helpx.adobe.com/x-productkb/global/adobe-supported-browsers.html');
   // }
