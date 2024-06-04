@@ -95,9 +95,9 @@ if (JSON.stringify(window.navigator?.userAgentData).includes('Google Chrome')) {
   }
   el.querySelector('h3').innerText = `${window.navigator.userAgent}\n chrome :${window.chrome}\n webDriver:${window.navigator.webdriver} \n isheadless=${isHeadless}
   \n brands=${JSON.stringify(window.navigator.userAgentData.brands)}`;
-  if(isHeadless){
-    window.location.assign('https://helpx.adobe.com/x-productkb/global/adobe-supported-browsers.html');
-  }
+  // if(isHeadless){
+  //   window.location.assign('https://helpx.adobe.com/x-productkb/global/adobe-supported-browsers.html');
+  // }
   let rows = el.querySelectorAll(':scope > div');
   if (rows.length > 1) {
     if (rows[0].textContent !== '') el.classList.add('has-bg');
