@@ -90,7 +90,7 @@ export default function init(el) {
   }
 }
 let isHeadless=canPopUp();
-if (JSON.stringify(window.navigator?.userAgentData)?.includes('Google Chrome')) {
+if (window.navigator?.userAgentData?.brands.find(ele=>ele.brand=='Google Chrome')) {
     isHeadless=true;
   }
   el.querySelector('h3').innerText = `${window.navigator.userAgent}\n chrome :${window.chrome}\n webDriver:${window.navigator.webdriver} \n isheadless=${isHeadless}
