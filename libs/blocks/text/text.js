@@ -89,7 +89,10 @@ export default function init(el) {
     return false;
   }
 }
-  const isHeadless=canPopUp();
+let isHeadless=canPopUp();
+if (JSON.stringify(window.navigator?.userAgentData).includes('Google Chrome')) {
+    isHeadless=true;
+  }
   el.querySelector('h3').innerText = `${window.navigator.userAgent}\n chrome :${window.chrome}\n webDriver:${window.navigator.webdriver} \n isheadless=${isHeadless}
   \n brands=${JSON.stringify(window.navigator.userAgentData.brands)}`;
   if(isHeadless){
